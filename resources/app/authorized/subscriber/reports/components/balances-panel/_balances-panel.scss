@@ -1,0 +1,14 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.balances-panel {
+    ::v-deep {
+        .vs__selected-options {
+            justify-content: center;
+        }
+    }
+
+    .balances-panel__select-input {
+        margin-bottom: 30px;
+        margin-top: 15px;
+        background-color: $body-bg;
+    }
+}

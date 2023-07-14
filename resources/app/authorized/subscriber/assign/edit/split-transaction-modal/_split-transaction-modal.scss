@@ -1,0 +1,88 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.splitTransactionModal {
+    .split-transaction__container {
+        background-color: $body-bg;
+        border: 1px solid $gray-300;
+    }
+    .split-transaction {
+        display: grid;
+        grid-template-columns: 3fr 1fr 35px;
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        font-size: 16px;
+        .form-control {
+            align-self: center;
+        }
+        .placeholder,
+        ::placeholder {
+            color: theme-color('gray-d');
+        }
+
+    }
+
+    .split-transaction__amount {
+        ::v-deep {
+            .currency-mask {
+                border-radius: 0.25rem;
+                padding-top: 0.375rem !important;
+                padding-bottom: 0.375rem !important;
+                &:not(.disabled) {
+                    border-color: #ced4da;
+                    background-color: $white;
+                }
+                .value-display {
+                    height: 38px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+
+    .split-transaction__split-again-button {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .split-transaction__action-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        .btn {
+            width: 120px;
+            &.btn-muted-success {
+                margin-right: 1rem;
+            }
+        }
+    }
+    .split-transaction__delete-button {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media #{$breakpointTabletMax} {
+        .modal-title h1 {
+            font-size: 24px;
+        }
+    }
+
+    @media #{$breakpointPhoneAlternative} {
+        .split-transaction {
+            grid-template-columns: 35px 2fr 1fr;
+        }
+        .split-transaction__delete-button {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+        .split-transaction__description {
+            grid-column-start: 2;
+        }
+        .split-transaction__amount {
+            grid-column-start: 3;
+        }
+    }
+}

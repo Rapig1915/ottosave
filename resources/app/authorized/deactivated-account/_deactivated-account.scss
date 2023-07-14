@@ -1,0 +1,21 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.deactivatedAccountComponent {
+    padding: 0 24px 75px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo {
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+    }
+    .copyright {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $body-bg;
+    }
+}

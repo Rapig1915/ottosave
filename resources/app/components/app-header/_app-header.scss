@@ -1,0 +1,28 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.appHeader {
+    height: $header-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.appLogo {
+    margin-left: 2.5rem;
+    transition: all 0.3s;
+}
+
+.link {
+    width: fit-content;
+}
+
+::v-deep {
+  .logo-sm {
+    width: 125px;
+  }
+
+  .logo-md {
+    width: 200px;
+  }
+}

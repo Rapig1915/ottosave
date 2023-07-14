@@ -1,0 +1,26 @@
+// Globals
+@import "~vue_root/assets/scss/_variables";
+
+// Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+// Chartist
+@import "~vue_root/assets/scss/_chartist";
+// Vue Select
+@import "vue-select/src/scss/vue-select.scss";
+
+// Bootstrap Overrides
+@import "~vue_root/assets/scss/_overrides";
+
+#vueApp {
+    .vueOnePage {}
+    .font_preload {
+        opacity: 0;
+        height: 0;
+    }
+}
+iframe#finicityConnectIframe {
+    z-index: 5000;
+    position: fixed;
+}

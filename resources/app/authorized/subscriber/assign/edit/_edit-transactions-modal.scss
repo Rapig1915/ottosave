@@ -1,0 +1,159 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+::v-deep {
+    .modal {
+        padding-left: 0 !important;
+    }
+    .modal-header button.close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+    }
+
+    .modal-title {
+        border-bottom: 1px solid $gray-200;
+        padding-bottom: 0.5rem;
+        text-align: left;
+        & h1 {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.transaction {
+    display: grid;
+    grid-template-columns: 27px 62px 112px 9fr 35px 3fr;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    background-color: $body-bg;
+    border: 1px solid $gray-300;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 16px;
+    .form-control {
+        align-self: center;
+    }
+    .placeholder,
+    ::placeholder {
+        color: theme-color('gray-d');
+    }
+    .custom-select.placeholder:focus {
+        color: $black;
+    }
+}
+
+.transaction__delete-column {
+    align-self: center;
+    text-align: center;
+    .btn {
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.transaction__card-icon {
+    align-self: center;
+    text-align: center;
+    ::v-deep {
+        .vs__search {
+            display: none;
+        }
+        .vs__dropdown-toggle {
+            height: calc(1.5em + 0.75rem + 2px);
+        }
+        .vs__selected-options {
+            align-items: center;
+        }
+    }
+}
+
+.transaction__date {
+    text-align: center;
+    align-self: center;
+    ::v-deep {
+        .datepicker {
+            text-align: center;
+        }
+    }
+}
+
+.transaction__amount {
+    ::v-deep {
+        .currency-mask{
+            border-radius: 0.25rem;
+            border-color: #ced4da;
+            background-color: $white;
+            padding-top: 0.375rem !important;
+            padding-bottom: 0.375rem !important;
+            .value-display {
+                height: 38px;
+                line-height: 38px;
+            }
+        }
+    }
+}
+
+::v-deep {
+    .modal-header {
+        padding-bottom: 0;
+    }
+
+    .datepicker {
+        padding-left: 0px;
+        max-width: 6em;
+    }
+}
+
+@media #{$breakpointTabletMax} {
+    .modal-title h1 {
+        font-size: 24px;
+    }
+    .transaction {
+        grid-template-columns: 62px 112px 35px 2fr 3fr;
+        padding-right: 30px;
+    }
+    .transaction__card-icon {
+        grid-row-start: 1;
+        grid-column: 1;
+    }
+    .transaction__date {
+        grid-row-start: 1;
+        grid-column: 2;
+    }
+    .transaction__split-button {
+        grid-row-start: 1;
+        grid-column: 3;
+    }
+    .transaction__amount {
+        grid-row-start: 1;
+        grid-column: 5;
+    }
+    .transaction__delete-column {
+        grid-row-start: 2;
+        grid-column: 1;
+    }
+    .transaction__description {
+        grid-row-start: 2;
+        grid-column: 2 / span 4;
+    }
+}
+@media #{$breakpointPhoneAlternative} {
+    ::v-deep {
+        .modal-body {
+            padding: 1rem 0.25rem;
+        }
+    }
+    .transaction {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        column-gap: 5px;
+    }
+    .transaction__amount {
+        grid-column: 4 / span 2;
+    }
+}

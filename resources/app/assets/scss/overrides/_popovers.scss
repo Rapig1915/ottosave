@@ -1,0 +1,83 @@
+// Popovers
+
+.popover,
+[tabindex="-1"] {
+    &:focus {
+        outline: 0;
+    }
+}
+
+.popover {
+    border-radius: 5pt;
+    border: 1.5px solid $gray-300;
+    box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.13);
+    font-size: 12px;
+    font-family: $font-family-sans-serif;
+    &[x-placement="bottom"] {
+        .arrow::before, .arrow::after {
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top-color: transparent;
+        }
+        .arrow::after {
+            bottom: -1.5px;
+        }
+        .arrow::before {
+            border-bottom-color: $gray-300;
+        }
+    }
+    &[x-placement="top"] {
+        .arrow::before, .arrow::after {
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+        .arrow::after {
+            top: -1.5px;
+        }
+        .arrow::before {
+            border-top-color: $gray-300;
+        }
+    }
+    &[x-placement="left"] {
+        .arrow::before, .arrow::after {
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+        }
+        .arrow::after {
+            right: 2.5px;
+        }
+        .arrow::before {
+            border-left-color: $gray-300;
+        }
+    }
+    &[x-placement="right"] {
+        .arrow::before, .arrow::after {
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+        }
+        .arrow::after {
+            left: 1.5px;
+        }
+        .arrow::before {
+            border-right-color: $gray-300;
+        }
+    }
+}
+.popover-header {
+    background-color: $white;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.tooltip.b-tooltip-white {
+    border-radius: 5pt;
+    background-color: $white;
+    border: 1.5px solid $gray-300;
+    box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.13);
+    font-size: 12px;
+    font-family: $font-family-sans-serif;
+    opacity: 1;
+}

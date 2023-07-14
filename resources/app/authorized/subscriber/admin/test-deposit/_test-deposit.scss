@@ -1,0 +1,187 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.searchInput {
+    position: relative;
+    input {
+        text-indent: 24px;
+    }
+    .fa-search {
+        position: absolute;
+        top: 10px;
+        left: 18px;
+    }
+}
+
+::v-deep {
+    .table-nostriped tbody th tr:nth-of-type(odd) {
+        background-color: white;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+    }
+
+    .table-nostriped th {
+        background-color: white;
+    }
+
+    th {
+        font-weight: 600;
+
+    }
+
+    .user-list-table {
+        max-height: 800px;
+    }
+}
+
+.make-deposit-modal {
+    ::v-deep {
+        .modal-dialog {
+            max-width: 600px;
+        }
+        .modal-body {
+            text-align: center;
+            padding: 15px $grid-gutter-width;
+        }
+    }
+
+    .make-deposit-modal__header-wrapper {
+        text-align: left;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .make-deposit-modal__header {
+        border-bottom: 1px solid $gray-200;
+        padding-top: 10px;
+    }
+
+    .make-deposit-modal__close-icon {
+        position: absolute;
+        top: 0px;
+        right: -25px;
+        cursor: pointer;
+        color: $gray-400;
+    }
+
+    .make-deposit-modal__title {
+        font-size: 24px;
+        @media #{$breakpointPhoneAlternative} {
+            font-size: 22px;
+        }
+    }
+
+    .make-deposit-modal__sub-title {
+        color: $gray-400;
+        font-weight: 400;
+        margin-bottom: 15px;
+        @media #{$breakpointPhoneAlternative} {
+            font-size: 14px;
+        }
+    }
+
+    .make-deposit-modal__form-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .make-deposit-modal__label {
+        width: 100px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+        @media #{$breakpointPhoneAlternative} {
+            width: 100%;
+            font-size: 12px;
+        }
+    }
+
+    .make-deposit-modal__account-select {
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: $body-bg;
+
+        &--invalid {
+            ::v-deep.vs__dropdown-toggle {
+                border: 1px solid $danger;
+            }
+        }
+        ::v-deep {
+            .vs__selected {
+                width: 97%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .vs__selected-options {
+                width: 50%;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+            .vs__dropdown-toggle {
+                height: 100%;
+                padding-top: 5px;
+                padding-bottom: 9px;
+                align-items: center;
+            }
+            .vs__dropdown-menu {
+                max-height: 8.75em;
+                padding-top: 0px;
+            }
+        }
+
+        .account-select__select-option {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media #{$breakpointTabletLandscapeMin} {
+                padding-right: 45px;
+            }
+        }
+
+        .select-option__account-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            font-size: 16px;
+            &--placeholder {
+                color: $gray-400;
+            }
+        }
+
+        .select-option__account-balance {
+            font-size: 16px;
+        }
+    }
+
+    .make-deposit-modal__currency-input {
+        ::v-deep {
+            .currency-mask {
+                border-color: rgba(60, 60, 60, 0.26);
+            }
+        }
+    }
+
+    .make-deposit-modal__validation-error {
+        text-align: left;
+        padding: 10px 0 15px 100px;
+        color: $danger;
+        width: 100%;
+        min-height: 49px;
+    }
+
+    .make-deposit-modal__footer {
+        padding-bottom: 10px;
+        .btn {
+            @media #{$breakpointPhoneAlternative} {
+                width: 100%;
+            }
+        }
+    }
+}

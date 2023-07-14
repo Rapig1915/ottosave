@@ -1,0 +1,94 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.currency-mask {
+    background-color: $gray-100;
+    border: 1px solid;
+    border-color: $gray-200;
+    border-radius: 0px;
+    position: relative;
+
+    &.disabled {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    &:focus, &:focus-within {
+        box-shadow: $default-focus-shadow;
+        border-color: $default-focus-border-color;
+        outline: 0px transparent;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .dollarSign {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    input {
+        background: transparent;
+        border: 0px transparent;
+        caret-color: $body-color-dark;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 0;
+        padding-top: 0;
+        position: relative;
+        z-index: 2;
+
+        &:focus {
+            border: 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+            background: $gray-100;
+            -webkit-text-fill-color: $body-color-dark;
+            color: $body-color-dark;
+            outline-color: transparent;
+        }
+    }
+
+    .read-only {
+        &:focus {
+            background: white;
+            outline: none;
+        }
+        z-index: -1;
+    }
+
+    .value-display {
+        color: $body-color-dark;
+        height: 40px;
+        left: 1.5rem;
+        line-height: 42px;
+        overflow: hidden;
+        position: absolute;
+        right: .625rem;
+        top: 0;
+        text-align: right;
+        white-space: nowrap;
+        z-index: 1;
+
+        .placeholder,
+        .autofillPlaceholder {
+            color: theme-color('gray-d');
+        }
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number],
+    input[type=text] {
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+        outline: none;
+    }
+}
+
+.currency-mask-read-only {
+    background-color: white;
+    border-color: white;
+}

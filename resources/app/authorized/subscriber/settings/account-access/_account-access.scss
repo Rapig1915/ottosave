@@ -1,0 +1,62 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.account-access-page {
+    .mt-32 {
+        margin-top: 32px;
+    }
+
+    .mt-20 {
+        margin-top: 20px;
+    }
+
+    .trial-box {
+        height: auto;
+        min-height: 3em;
+        padding: 10px;
+        &.alert-danger {
+            margin-left: 1em;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: darken($danger, 10%);
+        }
+        &.alert-info {
+            border-radius: 5px;
+        }
+    }
+
+    .account-access-page__title {
+        font-size: 24px;
+    }
+
+    .account-access-form {
+        .form-button {
+            height: 3em;
+        }
+        .invite-delete-button {
+            cursor: pointer;
+            font-size: 20px;
+        }
+        label {
+            padding-left: 15px;
+            font-size: 14px;
+        }
+        ::v-deep {
+            input, select {
+                border-radius: 2px;
+                height: 3em;
+                background-color: $body-bg;
+                border-color: $gray-200;
+                padding-right: 0px;
+                &::placeholder {
+                    color: $gray-400;
+                }
+            }
+        }
+    }
+
+    .account-user-row {
+        min-height: 48px;
+        margin-top: 20px;
+    }
+}

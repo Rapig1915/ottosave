@@ -1,0 +1,19 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.account-color-picker {
+    &__colors {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5px;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__color {
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 5px 10px;
+        width: 100%;
+        color: $white;
+    }
+}

@@ -1,0 +1,18 @@
+@import "~vue_root/assets/scss/_variables";
+.vueIndexView {
+    ::v-deep {
+        .tour-popover-highlight {
+            position: relative;
+            box-shadow: 0 0 0 20px white;
+            z-index: 1031;
+        }
+        section.tour-popover-highlight, div.tour-popover-highlight, h3.tour-popover-highlight {
+            background-color: white;
+            border-radius: 0.25rem;
+            &.row {
+                background-color: $body-bg;
+
+            }
+        }
+    }
+}

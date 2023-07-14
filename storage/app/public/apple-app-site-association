@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "C9X5VT292N.com.defendyourmoney.app.1",
+                "paths": ["NOT /api/v1/finicity/redirect-handler", "*"]
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.login-view {
+    .text-reduced {
+        font-size: 0.8rem;
+    }
+
+    .login-view__biometric-button {
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        background-color: rgba($primary, 0.1);
+        margin-right: 3px;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        i {
+            font-size: 20px;
+        }
+    }
+}

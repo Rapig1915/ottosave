@@ -1,0 +1,13 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.reportsPage {
+    ::v-deep {
+        .card-body {
+            padding-top: $grid-gutter-width;
+            padding-bottom: $grid-gutter-width;
+        }
+    }
+
+    .reportsPage__section {
+        margin-bottom: $grid-gutter-width;
+    }
+}

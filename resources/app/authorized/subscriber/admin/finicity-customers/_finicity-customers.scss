@@ -1,0 +1,53 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.finicityCustomersComponent {
+    ::v-deep {
+        th {
+            font-weight: 600;
+        }
+    }
+    .fadeHeight-enter-active,
+    .fadeHeight-leave-active {
+        transition: all 0.5s ease-in-out;
+        max-height: 2300px;
+        overflow: hidden;
+    }
+    .fadeHeight-enter,
+    .fadeHeight-leave-to
+    {
+        opacity: 0;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: all 0.5s ease-in-out;
+    }
+    .fade-enter,
+    .fade-leave-to
+    {
+        opacity: 0;
+    }
+
+    .refreshButton {
+        .fa-sync-alt {
+            font-size: 125%;
+            margin-top: 6px;
+            cursor: pointer;
+        }
+    
+        &.mobile {
+            vertical-align: bottom;
+            padding-bottom: 5px;
+        }
+    
+        .disabled {
+            cursor: not-allowed;
+        }
+    
+        .fa-sync-alt {
+            color: $link-hover-color;
+        }
+    }
+    
+}

@@ -1,0 +1,15 @@
+// Forms
+.currency-mask-input {
+    background: transparent;
+    border: 0px transparent;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.vs--unsearchable .vs__search {
+    // this hides the search box without breaking the close functionality
+    max-width: 1px;
+    min-width: 1px;
+    padding: 0;
+    margin: 0;
+}

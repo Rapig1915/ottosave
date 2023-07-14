@@ -1,0 +1,6 @@
+// Modals
+.modal-dialog {
+    &:not(.modal-dialog-centered) {
+        margin-top: calc(env(safe-area-inset-top, 0px) + #{$header-height});
+    }
+}

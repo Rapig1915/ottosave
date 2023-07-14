@@ -1,0 +1,63 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.shade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+}
+
+.tourPopoverContainer {
+    @media #{$breakpointPhoneAlternative} {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}
+
+::v-deep {
+    .popover {
+        min-width: 500px;
+        max-width: 500px;
+        z-index: 1032;
+        border: 1px solid $primary;
+        @media #{$breakpointPhoneAlternative} {
+            min-width: 330px;
+            max-width: 330px;
+        }
+
+        &.animatedTourExit {
+            overflow: hidden;
+            min-width: 0;
+        }
+    }
+
+    .popover-body {
+        padding: 0;
+        font-family: $font-family-sans-serif;
+        color: $body-color;
+        font-size: 1rem;
+    }
+
+    .popover-footer {
+        background-color: $card-footer-background-color;
+        border-top: 1px solid $gray-200;
+        border-radius: 0 0 0.3rem 0.3rem;
+        @media #{$breakpointPhoneAlternative} {
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: 0;
+        }
+    }
+
+    .popover > .arrow,
+    .popover > .arrow:after,
+    .popover > .arrow:before {
+        border-width: 20px;
+        margin: -15px;
+    }
+}

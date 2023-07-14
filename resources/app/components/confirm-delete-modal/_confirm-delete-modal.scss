@@ -1,0 +1,16 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.confirm-delete-modal {
+    .confirm-delete-modal__confirmation_input {
+        &::placeholder {
+            color: $gray-300;
+        }
+    }
+    .confirm-delete-modal__actions {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        .btn {
+            font-size: 16px;
+        }
+    }
+}

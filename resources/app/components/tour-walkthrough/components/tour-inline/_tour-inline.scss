@@ -1,0 +1,14 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.inlineTourComponent {
+    z-index: 1001;
+    width: 100%;
+    .modal-content {
+        border: 1px solid $primary;
+    }
+    &.animatedTourExit {
+        position: absolute;
+        background-color: white;
+        overflow: hidden;
+    }
+}

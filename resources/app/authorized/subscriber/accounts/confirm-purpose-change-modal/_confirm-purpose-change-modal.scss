@@ -1,0 +1,26 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.confirm-purpose-change-modal {
+    ::v-deep {
+        .modal-header {
+            padding-left: 32px;
+
+            .modal-title {
+                flex-grow: 1;
+                padding-bottom: 0.5rem !important;
+                text-align: left;
+                border-bottom: 1px solid $gray-200 !important;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .close {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .confirm-delete-modal__confirmation_input {
+        &::placeholder {
+            color: $gray-300;
+        }
+    }
+}

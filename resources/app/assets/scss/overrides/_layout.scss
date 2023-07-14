@@ -1,0 +1,40 @@
+// Scaffolding
+
+// Half of bootstrap's built-in offset-1 (colum)
+.offset-half {
+    margin-left: 4.166666666666667%;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+// #=== Responsive width classes
+
+$widths: 25, 50, 75, 100;
+
+@each $width in $widths {
+    .w-#{$width}-sm {
+        @media only screen and (min-width: $widthTablet) {
+            width: percentage($width / 100);
+        }
+    }
+
+    .w-#{$width}-md {
+        @media only screen and (min-width: $widthTabletLandscape) {
+            width: percentage($width / 100);
+        }
+    }
+
+    .w-#{$width}-lg {
+        @media only screen and (min-width: $widthDesktop) {
+            width: percentage($width / 100);
+        }
+    }
+
+    .w-#{$width}-xl {
+        @media only screen and (min-width: $widthDesktopWide) {
+            width: percentage($width / 100);
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.vueUserView {
+    .head-spacer {
+        height: calc(env(safe-area-inset-top, 100px) / 2);
+    }
+
+    ::v-deep {
+        .guest-form {
+            .form-header {
+                font-size: 1.75em;
+            }
+            .submit-button {
+                height: 3em;
+            }
+            ::v-deep {
+                input {
+                    border-radius: 2px;
+                    height: 3em;
+                    background-color: $body-bg;
+                    border-color: $gray-200;
+                    &::placeholder {
+                        color: $gray-400;
+                    }
+                }
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

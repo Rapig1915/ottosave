@@ -1,0 +1,444 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.assign-container {
+
+    section {
+        margin-bottom: $grid-gutter-width;
+    }
+
+    ::v-deep {
+        .card-body {
+            padding-top: $grid-gutter-width;
+            padding-bottom: $grid-gutter-width;
+        }
+
+        .list-group-item {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
+    }
+
+    .draggable {
+        cursor: move;
+        cursor: -webkit-grab;
+    }
+
+    .draggable-list--disabled .draggable {
+        cursor: default;
+    }
+
+    .opacity-0 {
+        opacity: 0;
+    }
+
+    .assignable-transactions-header {
+        h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+    }
+
+    .panelTitle {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+
+    .card-text {
+        font-size: 85%;
+    }
+
+    .card-text-icon {
+        width: 15px;
+    }
+
+    .sub-card {
+        margin-bottom: 15px;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        box-shadow: 0 2px 6px 1px #f4f4f4;
+    }
+
+    .transaction-list {
+        font-size: 85%;
+
+        &__checkbox-column {
+            flex-shrink: 0;
+            margin-left: -15px;
+            width: 33px;
+            @media #{$breakpointPhoneAlternative} {
+                margin-left: 0px;
+            }
+            ::v-deep {
+                .custom-control-input:focus ~ .custom-control-label::before {
+                    box-shadow: 0 0 0 0.2rem transparentize($primary, 0.75);
+                    border-color: transparentize($primary, 0.5);
+                }
+                .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+                    background-color: transparentize($primary, 0.75);
+                    border-color: transparentize($primary, 0.75);
+                }
+                .custom-control-input:checked ~ .custom-control-label::before {
+                    border-color: $primary;
+                    background-color: $primary;
+                }
+            }
+        }
+        &__icon-column {
+            flex-shrink: 0;
+            width: 35px;
+        }
+        &__date-column {
+            flex-shrink: 0;
+            width: 65px;
+        }
+        &__description-column {
+            flex-grow: 1;
+            flex-shrink: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 1rem;
+            padding-right: 0.5rem;
+        }
+
+        &__amount-column {
+            flex-shrink: 0;
+            max-width: 25%;
+        }
+    }
+
+    .pendingAssignment {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .pendingAssignment,
+    .completedAssignment {
+        .transactionDescription {
+            overflow: hidden;
+            white-space: nowrap;
+            transition: max-height 0.1s ease-in-out;
+            text-overflow: ellipsis;
+            max-height: calc(1em + 0.75rem);
+            &:hover {
+                max-height: calc(2em + 0.75rem);
+                white-space: normal;
+                text-overflow: clip;
+            }
+        }
+    }
+
+    #warning-popover-container {
+        ::v-deep {
+            .popover {
+                border-color: red;
+            }
+            .bs-popover-right {
+                .arrow::before {
+                    border-right-color: red;
+                }
+            }
+            .bs-popover-left {
+                .arrow::before {
+                    border-left-color: red;
+                }
+            }
+        }
+    }
+    .status-panel {
+        margin-left: -20px;
+        margin-right: -20px;
+        background-color: $card-footer-background-color;
+        box-shadow: 0 0 0 1px $gray-200;
+        padding: 20px 0;
+        .upgrade-button {
+            min-width: 180px;
+        }
+    }
+
+    .assignableAccountList {
+        .undo-button {
+            border: none;
+            font-size: 12px;
+            .fa-stack {
+                transform: rotate(-45deg);
+            }
+            .fa-circle {
+                color: $gray-400;
+            }
+            .fa-undo {
+                padding-top: 1px;
+                &::before {
+                    padding-left: 2px;
+                }
+            }
+        }
+
+        .assigned-header {
+            font-size: 1.3rem;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            .account-name {
+                font-size: 18px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .account-balance {
+                font-size: 18px;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+        }
+
+        .expanded {
+            .assigned-header {
+                .account-name,
+                .account-balance {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .assignableAccountList__account-name-column {
+            flex: 0 1 58.33333333%;
+            max-width: 58.33333333%;
+            min-width: 0;
+            
+            &.has-schedule .bank-account-icon {
+                cursor: pointer !important;
+            }
+
+            &.has-schedule .account-name {
+                cursor: pointer;
+            }
+        }
+
+        @each $name, $color in $account-colors {
+            .assignable-account-border-#{$name} {
+                border-radius: 6px 6px 0px 0px;
+                box-shadow: inset 0 0 0 2px $color;
+            }
+            .hasAssignments.#{$name} {
+                color: $color;
+            }
+        }
+
+        .assigmentAmount {
+            text-align: right;
+            .calculatorPlaceholder {
+                width: 16px;
+                display: inline-block;
+            }
+        }
+        .assignmentActionColumn {
+            width: 30px;
+            margin-left: 5px;
+            text-align: center;
+        }
+
+        .collapse-arrow {
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.2s;
+
+            &.hasAssignments {
+                font-size: 24px;
+                vertical-align: text-top;
+            }
+        }
+
+        .calculator-icon {
+            font-size: 16px;
+            margin-left: 5px;
+            margin-top: 2px;
+        }
+
+        .assignable-account-error {
+            background-color: $white;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding: 10px 25px;
+            box-shadow: 3px 7px 6.5px rgba(214, 213, 213, 0.48);
+        }
+
+        .custom-card {
+            margin-bottom: 15px;
+            background-color: $white;
+            transition: all 0.3s;
+            &.has-error {
+                margin-bottom: 0px;
+                box-shadow: 0 0 0 2px $danger;
+            }
+
+            .custom-card-content,
+            .custom-card-footer {
+                padding: 15px;
+            }
+
+            .assigned-trans {
+                font-size: 14px;
+                padding: 0px 15px;
+
+                &:first-of-type {
+                    padding-top: 7.5px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.125);
+                }
+                &:last-of-type {
+                    padding-bottom: 7.5px;
+                }
+            }
+
+            .custom-card-footer {
+                font-size: 14px;
+                border-top: 1px solid rgba(0, 0, 0, 0.125);
+            }
+
+            .assignment-collapse {
+                order: 1;
+            }
+
+            .footer-collapse {
+                order: 3;
+            }
+
+            a, a:hover {
+                text-decoration: none;
+            }
+
+            .sub-card {
+                span, a, strong {
+                    color: $gray-100;
+                    opacity: .7;
+                }
+            }
+        }
+
+        @each $name, $color in $account-colors {
+            .custom-card.#{$name} {
+                border-bottom: 5px solid $color;
+            }
+
+            .custom-card.#{$name} .sortable-ghost {
+                margin-bottom: 0;
+                opacity: 0.5;
+                order: 2;
+                transition: all 150ms;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-size: 14px;
+                .transaction-list__checkbox-column {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .bulk-assignment-panel {
+        padding-top: 24px;
+        padding-bottom: $grid-gutter-width;
+        position: sticky;
+        bottom: 0px;
+        z-index: 2;
+        background-color: $white;
+        font-size: 85%;
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .bulk-assignment-panel__total {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .bulk-assignment-panel__account-select {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 100%;
+        background-color: $body-bg;
+
+        &--invalid {
+            ::v-deep.vs__dropdown-toggle {
+                border: 1px solid $danger;
+            }
+        }
+        ::v-deep {
+            .vs__selected {
+                width: 97%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .vs__selected-options {
+                width: 50%;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+            .vs__dropdown-toggle {
+                height: 100%;
+                padding-top: 5px;
+                padding-bottom: 9px;
+                align-items: center;
+            }
+            .vs__dropdown-menu {
+                max-height: 8.75em;
+                padding-top: 0px;
+            }
+        }
+
+        .account-select__select-option {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media #{$breakpointTabletLandscapeMin} {
+                padding-right: 45px;
+            }
+        }
+
+        .select-option__account-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            font-size: 16px;
+        }
+
+        .select-option__account-balance {
+            font-size: 16px;
+        }
+    }
+
+    .bulk-assignment-panel__error-message,
+    .assignable-account-error {
+        color: $danger;
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        &:focus {
+            outline: none;
+        }
+        .close-btn {
+            cursor: pointer;
+        }
+    }
+
+    .bulk-assignment-panel__button {
+        font-size: 18px;
+        margin-top: 36px;
+    }
+
+    .positive-difference-warning {
+        font-size: 14px;
+        color: #ABABAB;
+        font-weight: normal;
+
+        .text-semi-bold {
+            font-weight: 600;
+        }
+    }
+}

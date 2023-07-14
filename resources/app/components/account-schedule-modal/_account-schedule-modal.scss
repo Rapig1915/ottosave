@@ -1,0 +1,214 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.accountScheduleModal {
+
+    ::v-deep {
+        .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
+            background-color: $primary;
+        }
+        .confirm-delete-message {
+            font-size: 24px;
+        }
+        .modal-header button.close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+        }
+
+        .modal-title {
+            border-bottom: 1px solid $gray-200;
+            padding-bottom: 0.5rem;
+            text-align: left;
+            & h1 {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .account-name {
+                font-size: 24px;
+            }
+        }
+        input.datepicker {
+            background: $gray-100 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+            max-width: calc(100% - 25px);
+        }
+    }
+    .schedule-total {
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 600;
+        width: 383px;
+
+        .schedule-total__label {
+            width: 50%;
+            white-space: nowrap;
+        }
+        .schedule-total__amount {
+            width: 50%;
+            padding-right: 45px;
+            text-align: right;
+        }
+    }
+    .schedule-frequency {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+    }
+
+    .schedule-items__header-row {
+        display: grid;
+        grid-template-columns: 1fr 4fr 3fr 3fr 3fr 3fr 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .schedule-items__footer-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px 0px 10px 8px;
+
+        .add-schedule-button {
+            margin-right: 3px;
+            font-size: 16px;
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+        .schedule-items__total-selected {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            width: 383px;
+        }
+        .total-selected__amount {
+            width: 50%;
+            text-align: right;
+            padding-right: 45px;
+        }
+    }
+
+    .schedule-items__schedule-item {
+        display: grid;
+        grid-template-columns: 35px 4fr 3fr 3fr 3fr 3fr 25px;
+        column-gap: 10px;
+        row-gap: 10px;
+
+        background-color: $body-bg;
+        border: 1px solid $gray-300;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 10px;
+        font-size: 16px;
+        .form-control {
+            align-self: center;
+        }
+        .placeholder,
+        ::placeholder {
+            color: theme-color('gray-d');
+        }
+        .custom-select.placeholder:focus {
+            color: $black;
+        }
+    }
+    .schedule-item__delete-button {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .schedule-item__amount-input {
+        align-self: center;
+
+        ::v-deep {
+            .currency-mask{
+                border-radius: 0.25rem;
+                border-color: #ced4da;
+                background-color: $white;
+                padding-top: 0.375rem !important;
+                padding-bottom: 0.375rem !important;
+                .value-display {
+                    height: 38px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+    .schedule-item__type-input {
+        align-self: center;
+    }
+    .schedule-item__date-input {
+        align-self: center;
+    }
+    .schedule-item__total {
+        align-self: center;
+        text-align: right;
+        font-weight: 600;
+    }
+    .schedule-item__select-box {
+        align-self: center;
+        justify-self: end;
+        grid-column: 7;
+    }
+
+    @media #{$breakpointTabletLandscapeMax} {
+        .schedule-items__schedule-item {
+            grid-template-columns: 35px 3fr 3fr 3fr 4fr 3fr 25px;
+        }
+    }
+    @media #{$breakpointTabletMax} {
+        ::v-deep {
+            .modal-body {
+                padding: 1rem 0.25rem;
+            }
+        }
+        .schedule-total {
+            width: 100%;
+        }
+        .schedule-items__header-row,
+        .schedule-items__schedule-item {
+            grid-template-columns: 3fr 3fr 3fr 40px;
+        }
+        .schedule-items__total-selected {}
+        .schedule-item__delete-button {
+            grid-row-start: 2;
+            grid-column: 4;
+            width: 40px;
+            justify-self: end;
+        }
+        .schedule-item__description-input {
+            grid-column: 1 / span 2;
+        }
+        .schedule-item__amount-input {
+            grid-column: 3;
+        }
+        .schedule-item__select-box {
+            grid-row-start: 1;
+            grid-column: 4;
+            padding-right: 5px;
+            justify-self: end;
+        }
+        .schedule-total__amount,
+        .schedule-items__footer-row .total-selected__amount {
+            padding-right: 62px;
+        }
+    }
+    @media #{$breakpointPhoneAlternative} {
+        .add-schedule-button {
+            order: 1;
+        }
+        .schedule-items__total-selected {
+            order: 0;
+            margin-left: auto;
+        }
+    }
+}

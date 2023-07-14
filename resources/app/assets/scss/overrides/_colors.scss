@@ -1,0 +1,20 @@
+// Colors
+
+// Custom Color Classes
+.text-muted-light {
+	color: $gray-500;
+}
+
+.background-base {
+    background-color: $body-bg !important;
+}
+
+@each $name, $color in $account-colors {
+    .background-color-#{$name} {
+        background-color: $color !important;
+    }
+    
+    .color-#{$name} {
+        color: $color !important;
+    }
+}

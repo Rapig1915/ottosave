@@ -1,0 +1,15 @@
+{
+  "appId": "com.defendyourmoney.app.1",
+  "appName": "Defend Your Money",
+  "bundledWebRuntime": false,
+  "webDir": "public/ios_build",
+  "server": {
+    "hostname": "localhost",
+    "url": "http://localhost"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

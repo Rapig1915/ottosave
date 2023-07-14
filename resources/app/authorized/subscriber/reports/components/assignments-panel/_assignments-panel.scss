@@ -1,0 +1,129 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.assignmentsPanel {
+    ::v-deep {
+        .vs__selected-options {
+            justify-content: center;
+        }
+    }
+
+    .assignmentsPanel__monthInput {
+        margin-bottom: 20px;
+        margin-top: 15px;
+        background-color: $body-bg;
+    }
+
+    .accountRow {
+        &--expanded {
+            .collapseHeader__accountName {
+                font-weight: 600;
+            }
+            .collapseHeader__toggle {
+                transform: rotate(180deg);
+            }
+        }
+        &--hasAssignments {
+            .collapseHeader__toggle {
+                font-size: 24px;
+                vertical-align: text-top;
+            }
+            @each $name, $color in $account-colors {
+                .toggle-color-#{$name} {
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    .accountRow__collapseHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapseHeader__accountName {
+        font-size: 18px;
+        flex-shrink: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .collapseHeader__total {
+        flex-grow: 1;
+        text-align: right;
+        font-size: 18px;
+        font-weight: 600;
+        padding-right: 10px;
+    }
+    .collapseHeader__toggle {
+        width: 18px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .accountCollapse__assignment {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .assignment__date {
+        width: 110px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-left: 20px;
+    }
+    .assignment__description {
+        flex-shrink: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .assignment__amount {
+        white-space: nowrap;
+        text-align: right;
+        flex-grow: 1;
+        padding-right: 10px;
+    }
+    .assignment__toggle {
+        width: 18px;
+        font-size: 24px;
+        opacity: 0;
+        .fa-caret-up {
+            display: none;
+        }
+        &--visible {
+            opacity: 1;
+            .fa-caret-up {
+                display: inline-block;
+            }
+        }
+    }
+
+    .assignmentsPanel__totalRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .totalRow__title {
+        font-size: 18px;
+        font-weight: 600;
+        padding-left: 30px;
+    }
+
+    .totalRow__amount {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: right;
+        padding-right: 28px;
+    }
+}

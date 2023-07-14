@@ -1,0 +1,10 @@
+docker:
+  configuration:
+    kubernetes_version: 1.10.5
+  servers:
+  - server:
+      unique_name: dockerhost
+      size: s-2vcpu-2gb
+      region: sfo2
+      vendor: digitalocean
+      key_name: DigitalOcean (Ben)

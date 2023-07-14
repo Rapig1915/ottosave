@@ -1,0 +1,17 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.vueRegisterView {
+    .guest-form {
+        .terms-text {
+            font-size: 0.9rem;
+            line-height: 1rem;
+
+            a {
+                color: #888;
+
+                &:hover {
+                    color: #444;
+                }
+            }
+        }
+    }
+}

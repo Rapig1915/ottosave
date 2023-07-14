@@ -1,0 +1,22 @@
+.pastTransactionsComponent {
+    @import "~vue_root/assets/scss/_variables.scss";
+    ::v-deep {
+        .datepicker {
+            max-width: 100%;
+        }
+    }
+
+    .fadeHeight-enter-active,
+    .fadeHeight-leave-active {
+        transition: all 0.5s ease-in-out;
+        max-height: 2300px;
+        overflow: hidden;
+    }
+    .fadeHeight-enter,
+    .fadeHeight-leave-to
+    {
+        opacity: 0;
+        max-height: 0px;
+        overflow: hidden;
+    }
+}

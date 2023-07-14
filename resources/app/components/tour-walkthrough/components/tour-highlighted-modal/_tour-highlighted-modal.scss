@@ -1,0 +1,78 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.shade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+}
+
+.popover {
+    min-width: 500px;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: scroll;
+    z-index: 1032;
+    position: fixed;
+    border: 1px solid $primary;
+    background-color: $primary;
+    @media #{$breakpointPhoneAlternative} {
+        min-width: 330px;
+        max-width: 330px;
+    }
+    &.vertical-align-bottom {
+        top: auto;
+        bottom: 20px;
+    }
+    &.vertical-align-top {
+        bottom: auto;
+        top: 20px;
+    }
+    &.horizontal-align-left {
+        left: 20px;
+        right: auto;
+    }
+    &.horizontal-align-right {
+        right: 20px;
+        left: auto;
+    }
+    &.vertical-align-center {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &.horizontal-align-center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &.vertical-align-center.horizontal-align-center {
+        transform: translate(-50%, -50%);
+    }
+
+    &.animatedTourExit {
+        overflow: hidden;
+        min-width: 0;
+    }
+    .tour-footer {
+        background-color: $card-footer-background-color;
+        border-top: 1px solid $gray-200;
+        border-radius: 0 0 0.3rem 0.3rem;
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.1s;
+}
+.fade-enter,
+.fade-leave-to
+{
+    opacity: 0;
+}

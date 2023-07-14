@@ -1,0 +1,129 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+div {
+  ::v-deep {
+    /* Schedule Items modal */
+    .modal-xl {
+      max-width: 1074px;
+    }
+
+    /* Top gap of table labels are too large*/
+    .modal-header {
+      padding-bottom: 0px;
+    }
+
+    .modal-title {
+      width: 100%;
+      /* Standard title top and left gaps are too small */
+      padding-left: 15px;
+      padding-top: 15px;
+
+      /* Border below header title, cannot use standard border as that will be across the modal */
+      & h1 {
+        border-bottom: 1px solid $gray-200;
+        padding-bottom: 1.5rem;
+        text-align: left;
+      }
+    }
+
+    /* Standard close button too small and thick */
+    button.close {
+      font-size: 1.8rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    /* Labels */
+    .btable-th {
+      border: none;
+      color: $body-color-dark;
+      font-weight: map-get($font-weights, semibold);
+      /* Bottom gap too small */
+      padding-bottom: 15px;
+      /* Field gaps too wide, labels follow fields */
+      padding-right: 0px;
+      /* Top gap too big */
+      padding-top: 5px;
+      text-align: left;
+    }
+
+    thead .btable-th {
+      /* Establish the small gap between labels and left of fields */
+      padding-left: 25px;
+    }
+
+    /* Fix the width of certain fields */
+    .btable-th.amount-total {
+      width: 120px;
+    }
+
+    .btable-th.description {
+      width: 206px;
+    }
+
+    .btable-th.type {
+      width: 136px;
+    }
+
+    .btable-th.date-end {
+      width: 146px;
+    }
+    /* Default datepicker is too wide, should fit nicely with .date-end */
+    .datepicker {
+      max-width: 120px;
+    }
+
+    .btable-th.monthly-amount {
+      /* All labels are pushed to the right, except Monthly Amount, which is left aligned with the dollar sign */
+      padding-left: 15px;
+      width: 140px;
+      text-align: right;
+    }
+
+    /* Individual schedule item rows */
+    .btable-td {
+      /* Removes row bottom border and move rows closer together */
+      border: none;
+      padding-right: 0px;
+      /* Field gaps too wide */
+      padding-top: 0px;
+
+      /* More specific select, to bypass styling currency-mask */
+      & > input,
+      & .datepicker,
+      & select {
+        background-color: $gray-100;
+        border: 1px solid $gray-200;
+        border-radius: 2px;
+        /* Matches height of currency input */
+        height: 42px;
+        padding: 0px 16px;
+      }
+
+      /* Save, Delete buttons */
+      & button {
+        border: none;
+        border-radius: 2px;
+        padding: 10px 16px;
+      }
+    }
+
+    /* Monthly amount is not an input field, style differently */
+    .btable-td.monthly-amount {
+      color: $gray-500;
+      font-size: 21px;
+      line-height: 42px;
+      text-align: right;
+    }
+
+    .btable-td.action {
+      text-align: left;
+    }
+
+    .table-responsive {
+        @media #{$breakpointTabletLandscapeMax} {
+          display: block;
+          max-height: 60vh;
+        }
+    }
+  }
+}

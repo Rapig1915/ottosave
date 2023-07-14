@@ -1,0 +1,216 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+$fontSizeMobile: 16px;
+$fontSizeNormal: 18px;
+
+.balancesPanelComponent {
+    .balance-panel-card {
+        .bank-account-row-box {
+            box-shadow: 3px 7px 6.5px rgba(214, 213, 213, 0.48);
+
+            &.is-sticky {
+                display: none;
+
+                @media #{$breakpointPhoneAlternative} {
+                    display: block;
+                    position: fixed;
+                    top: 85px;
+                    left: 0px;
+                    width: calc(100% - 80px);
+                    margin-left: 40px;
+                    margin-right: 40px;
+                    background-color: $white;
+
+                    .bank-account-row {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+        
+        .bank-account-row {
+            box-shadow: 0 0 0 1.5px $gray-300;
+
+            .bank-account-row-content {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                &:not(.bank-account-row--credit) {
+                    align-items: center;
+                }
+            }
+            
+            .bank-account-row__account-name {
+                font-size: $fontSizeNormal;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                flex: 0 1 100%;
+                max-width: 100%;
+                min-width: 0;
+    
+                &.clickable span, &.clickable .bank-account-icon {
+                    cursor: pointer !important;
+                }
+            }
+    
+            .bank-account-row__account-balance {
+                font-size: $fontSizeNormal;
+                white-space: nowrap;
+                .calculator-icon {
+                    font-size: 16px;
+                    margin-left: 5px;
+                    margin-top: 3px;
+                }
+                .credit-balance {
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
+            }
+    
+            .collapse-arrow {
+                cursor: pointer;
+                font-size: 14px;
+                transition: transform 0.2s;
+                width: 20px;
+                text-align: center;
+    
+                &.hasTransactions {
+                    font-size: 24px;
+                    vertical-align: text-top;
+                }
+            }
+    
+            ::v-deep {
+                .total-label,
+                .total-balance {
+                    font-size: $fontSizeNormal;
+                    font-weight: 600;
+                }
+            }
+
+            &.expanded {
+                .account-name,
+                .credit-balance {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .transaction-rows {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: -0.9rem;
+            margin-right: -0.9rem;
+            border-top: 1px solid $gray-300;
+            border-bottom: 1px solid $gray-300;
+
+            .transaction-row {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 18px;
+                margin-right: 16px;
+                font-size: 85%;
+
+                .transactionDate {
+                    min-width: 50px;
+                }
+
+                .transactionDescription {
+                    flex-grow: 1;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition: max-height 0.1s ease-in-out;
+                    text-overflow: ellipsis;
+                    max-height: calc(1em + 0.75rem);
+                    &:hover {
+                        max-height: calc(2em + 0.75rem);
+                        white-space: normal;
+                        text-overflow: clip;
+                    }
+                }
+
+                .fas {
+                    color: $gray-300;
+                }
+
+                .move-button {
+                    border: none;
+                    font-size: 10px;
+                    margin-left: 5px;
+                    .fa-stack {
+                        position: relative;
+
+                        .fa-circle {
+                            color: $gray-400;
+                        }
+
+                        .fa-inverse {
+                            color: $white;
+                        }
+
+                        .fa-long-arrow-alt-up {
+                            position: absolute;
+                            top: 0px;
+                            left: 3px;
+                        }
+
+                        .fa-long-arrow-alt-down {
+                            position: absolute;
+                            top: 0px;
+                            left: -3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @each $name, $color in $account-colors {
+        .hasTransactions.#{$name} {
+            color: $color;
+        }
+        
+        .bank-account-row.#{$name} {
+            border-bottom: 3px solid $color;
+        }
+    }
+
+    .opacity-0 {
+        opacity: 0;
+    }
+
+    ::v-deep {
+        .card-body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .btn.btn-link {
+            font-size: 1rem;
+        }
+    }
+
+    .negativeBalancePopoverContainer {
+        ::v-deep {
+            .popover {
+                border: 1px solid $danger;
+            }
+            .arrow::before {
+                border-left-color: $danger;
+            }
+        }
+    }
+}
+
+@media #{$breakpointPhoneLandscapeMax} {
+    .bank-account-row__account-name, .bank-account-row__account-balance {
+        font-size: $fontSizeMobile !important;
+    }
+
+    ::v-deep {
+        .total-label,
+        .total-balance {
+            font-size: $fontSizeMobile !important;
+        }
+    }
+}

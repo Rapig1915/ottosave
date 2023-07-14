@@ -1,0 +1,302 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.transaction-mover-modal {
+    ::v-deep {
+        .modal-dialog {
+            max-width: 500px;
+        }
+        .modal-body {
+            text-align: center;
+            padding: 15px $grid-gutter-width;
+        }
+    }
+
+    .transaction-mover-modal__header-wrapper {
+        text-align: left;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .transaction-mover-modal__header {
+        border-bottom: 1px solid $gray-200;
+        padding-top: 10px;
+    }
+
+    .transaction-mover-modal__close-icon {
+        position: absolute;
+        top: 0px;
+        right: -25px;
+        cursor: pointer;
+        color: $gray-400;
+    }
+
+    .transaction-mover-modal__title {
+        font-size: 24px;
+        @media #{$breakpointPhoneAlternative} {
+            font-size: 22px;
+        }
+    }
+
+    .transaction-mover-modal__form-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .transaction-mover-modal__transaction-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+
+        @media #{$breakpointPhoneAlternative} {
+            font-size: 12px;
+        }
+        
+        @media #{$breakpointPhoneAlternative} {
+            gap: 5px;
+            padding: 0px;
+        }
+
+        .description {
+            flex-grow: 1;
+            width: 100%;
+            border: 1px solid $gray-300;
+            background-color: $body-bg;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        .amount {
+            min-width: fit-content;
+        }
+
+        button {
+            padding: 0px;
+            margin-left: 4px;
+        }
+    }
+
+    .transaction-mover-modal__account-select {
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: $body-bg;
+
+        &--invalid {
+            ::v-deep.vs__dropdown-toggle {
+                border: 1px solid $danger;
+            }
+        }
+        ::v-deep {
+            .vs__selected {
+                width: 97%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .vs__selected-options {
+                width: 50%;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+            .vs__dropdown-toggle {
+                height: 100%;
+                padding-top: 5px;
+                padding-bottom: 9px;
+                align-items: center;
+            }
+            .vs__dropdown-menu {
+                max-height: 8.75em;
+                padding-top: 0px;
+            }
+        }
+
+        .account-select__select-option {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media #{$breakpointTabletLandscapeMin} {
+                padding-right: 45px;
+            }
+        }
+
+        .select-option__account-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            font-size: 16px;
+            &--placeholder {
+                color: $gray-400;
+            }
+        }
+
+        .select-option__account-balance {
+            font-size: 16px;
+        }
+    }
+
+    .transaction-mover-modal__currency-input {
+        ::v-deep {
+            .currency-mask {
+                border-color: rgba(60, 60, 60, 0.26);
+            }
+        }
+    }
+
+    .transaction-mover-modal__validation-error {
+        text-align: center;
+        padding: 10px;
+        color: $danger;
+        width: 100%;
+    }
+
+    .transaction-mover-modal__footer {
+        padding-bottom: 10px;
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+.delete-transaction-confirm-modal {
+    ::v-deep {
+        .modal-dialog {
+            max-width: 500px;
+        }
+        .modal-body {
+            text-align: center;
+            padding: 15px $grid-gutter-width;
+        }
+    }
+
+    .delete-transaction-confirm-modal__header-wrapper {
+        text-align: left;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .delete-transaction-confirm-modal__header {
+        padding-top: 10px;
+    }
+
+    .delete-transaction-confirm-modal__title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .delete-transaction-confirm-modal__transaction-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-size: 15px;
+
+        @media #{$breakpointPhoneAlternative} {
+            font-size: 12px;
+        }
+        
+        @media #{$breakpointPhoneAlternative} {
+            gap: 5px;
+            padding: 0px;
+        }
+
+        .amount {
+            min-width: fit-content;
+        }
+    }
+
+    .delete-transaction-confirm-modal__footer {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 10px;
+        .btn {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .delete-transaction-confirm-modal__remark {
+        padding-bottom: 12px;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+.update-description-confirm-modal {
+    ::v-deep {
+        .modal-dialog {
+            max-width: 500px;
+        }
+        .modal-body {
+            text-align: center;
+            padding: 15px $grid-gutter-width;
+        }
+    }
+
+    .update-description-confirm-modal__header-wrapper {
+        text-align: left;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .update-description-confirm-modal__header {
+        padding-top: 10px;
+    }
+
+    .update-description-confirm-modal__title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .update-description-confirm-modal__transaction-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-size: 15px;
+
+        @media #{$breakpointPhoneAlternative} {
+            font-size: 12px;
+        }
+        
+        @media #{$breakpointPhoneAlternative} {
+            gap: 5px;
+            padding: 0px;
+        }
+
+        .amount {
+            min-width: fit-content;
+        }
+    }
+
+    .update-description-confirm-modal__footer {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 10px;
+        .btn {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .update-description-confirm-modal__remark {
+        padding-bottom: 12px;
+        text-align: center;
+        font-size: 12px;
+    }
+}

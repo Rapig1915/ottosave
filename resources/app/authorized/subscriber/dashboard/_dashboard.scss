@@ -1,0 +1,133 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.container {
+    @media #{$breakpointPhoneLandscapeMax} {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+}
+.dashboard-container {
+
+    section {
+        margin-bottom: $grid-gutter-width;
+    }
+
+    ::v-deep {
+        .card-body {
+            padding-top: $grid-gutter-width;
+            padding-bottom: $grid-gutter-width;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .btn {
+            font-size: 18px;
+        }
+    }
+
+    .progress {
+        position: relative;
+        height: 30px;
+        margin-bottom: 10px;
+        overflow: visible;
+        @media #{$breakpointPhoneLandscapeMax} {
+          margin-bottom: 5px;
+        }
+        .progress-bar {
+            background: $gray-300;
+            padding: 5px;
+
+            &.left {
+                border-radius: 0.25rem 0 0 0.25rem;
+            }
+
+            &.right {
+                border-radius: 0 0.25rem 0.25rem 0;
+            }
+
+            &.available {
+                background-color: $secondary;
+            }
+        }
+
+        .today-marker {
+            position: absolute;
+            top: -10px;
+            height: 50px;
+            border-left: 1px solid $black;
+            .text-wrapper {
+                position: relative;
+
+                .today-marker-text {
+                    position: absolute;
+                    width: 185px;
+                    top: -60px;
+                    text-align: left;
+                    left: -20px;
+                }
+            }
+        }
+
+        .current-balance {
+            position: absolute;
+            top: 0.85em;
+            right: 0.5em;
+            font-size: 18px;
+        }
+    }
+    .progress-footer {
+        font-size: 14px;
+    }
+
+    .chart-view {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .totals {
+            position: absolute;
+            left: 115px;
+            top: 115px;
+            bottom: 115px;
+            right: 115px;
+            text-align: center;
+            background: white;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+
+            > div {
+                margin: auto;
+
+                h6 {
+                    font-size: 18px;
+                    font-weight: normal;
+                }
+
+                h2 {
+                    font-size: 21px;
+                    font-weight: 600;
+                }
+            }
+
+            @media only screen and (max-width: $widthPhoneLandscape) {
+                position: initial;
+                padding-top: 10px;
+                box-shadow: none;
+            }
+        }
+
+        ::v-deep.ct-series {
+            cursor: pointer;
+        }
+    }
+
+    .positive-difference-warning {
+        font-size: 14px;
+        color: #ABABAB;
+        font-weight: normal;
+
+        .text-semi-bold {
+            font-weight: 600;
+        }
+    }
+}

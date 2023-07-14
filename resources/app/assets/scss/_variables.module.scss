@@ -1,0 +1,35 @@
+// Boostrap defaults
+@import "_variables.scss";
+
+:export {
+    accountColorGray: #D6D5D5;
+    accountColorGrayAlt: #0B102A;
+    accountColorCyan: #FFB617;
+    accountColorCyanAlt: #CE931F;
+    accountColorGreen: #00D19D;
+    accountColorGreenAlt: #31AE80;
+    accountColorPurple: #1778FF;
+    accountColorPurpleAlt: #1251D0;
+    accountColorPink: #133CF2;
+    accountColorPinkAlt: #0015C3;
+    accountColorOrange: #FF346C;
+    accountColorOrangeAlt: #C42348;
+    accountColorYellow: #09EAF2;
+    accountColorYellowAlt: #46C1CA;
+    accountColorViolet: #8A179E;
+    accountColorVioletAlt: #590072;
+    accountColorLightGray: #b2bac3;
+    accountColorLightOrange: #ffc181;
+    accountColorTeal: #54cad4;
+    accountColorSky: #00d0d6;
+    accountColorSkyAlt: #A7DCE2;
+    accountColorLavender: #CCB7E9;
+    accountColorPeach: #F7CFA5;
+    accountColorDarkPeach: #FFBBA8;
+    accountColorPeriwinkle: #A6ADDB;
+    accountColorGold: #D4AF37;
+    accountColorSilver: #C0C0C0;
+    accountColorBronze: #CD7F32;
+    accountColorCustom1: #2B14BC;
+    primary: $primary;
+}

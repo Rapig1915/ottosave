@@ -1,0 +1,121 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+$fontSizeMobile: 16px;
+$fontSizeNormal: 18px;
+
+.balancesPanelComponent {
+    .balance-panel-card {
+        .bank-account-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-top: 11px;
+            &:not(.bank-account-row--credit) {
+                align-items: center;
+                padding-bottom: 11px;
+                border-bottom: 1px solid $gray-300;
+            }
+        }
+
+        .bank-account-row__account-name {
+            font-size: $fontSizeNormal;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            flex: 0 1 100%;
+            max-width: 100%;
+            min-width: 0;
+        }
+
+        .bank-account-row__account-balance {
+            font-size: $fontSizeNormal;
+            white-space: nowrap;
+            cursor: pointer;
+            .calculator-icon {
+                font-size: 16px;
+                margin-left: 5px;
+                margin-top: 3px;
+            }
+            .credit-balance {
+                white-space: nowrap;
+            }
+        }
+        ::v-deep {
+            .total-label,
+            .total-balance {
+                font-size: $fontSizeNormal;
+                font-weight: 600;
+            }
+        }
+        .credit-utilization {
+            width: 67%;
+            display: flex;
+            align-items: center;
+            .credit-utilization__percentage {
+                width: 45px;
+                font-size: 12px;
+                line-height: 1em;
+            }
+            .credit-utilization__bar {
+                flex-grow: 1;
+                margin-right: 10px;
+                .progress-bar {
+                    &.bg-green {
+                        background-color: #00D19D;
+                    }
+                    &.bg-yellow {
+                        background-color: #FFF61B;
+                    }
+                    &.bg-orange {
+                        background-color: #FFB617;
+                    }
+                    &.bg-red {
+                        background-color: #FF346C;
+                    }
+                    &.bg-gray {
+                        background-color: $gray-200;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .opacity-0 {
+        opacity: 0;
+    }
+
+    ::v-deep {
+        .card-body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .btn.btn-link {
+            font-size: 1rem;
+        }
+    }
+
+    .negativeBalancePopoverContainer {
+        ::v-deep {
+            .popover {
+                border: 1px solid $danger;
+            }
+            .arrow::before {
+                border-left-color: $danger;
+            }
+        }
+    }
+}
+
+@media #{$breakpointPhoneLandscapeMax} {
+    .bank-account-row__account-name, .bank-account-row__account-balance {
+        font-size: $fontSizeMobile !important;
+    }
+
+    ::v-deep {
+        .total-label,
+        .total-balance {
+            font-size: $fontSizeMobile !important;
+        }
+    }
+}

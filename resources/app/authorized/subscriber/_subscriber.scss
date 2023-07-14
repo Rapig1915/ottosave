@@ -1,0 +1,31 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.subscriber-view {
+    .subscriber-view__demo-mode-alert {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        @media #{$breakpointTabletMax} {
+            font-size: 12px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+    .subscriber-view__account-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        color: #5FCEA0;
+        border: 1px solid #5FCEA0;
+        background-color: #EFFAF5;
+        font-weight: 550;
+        @media #{$breakpointTabletMax} {
+            font-size: 12px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+}

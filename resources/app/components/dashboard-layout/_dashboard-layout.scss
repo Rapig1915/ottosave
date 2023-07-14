@@ -1,0 +1,320 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+@media only screen and (min-width: $widthTabletLandscape) {
+    nav {
+        /* To prevent logo and link blocks having the same height */
+        align-items: flex-start;
+    }
+    .dashboardLayoutComponent > .col-lg-3 {
+        max-width: 300px;
+        flex: 0 0 300px;
+    }
+    ::v-deep {
+        .appHeader {
+            padding-top: 25px;
+            .appLogo {
+                width: 175px;
+            }
+        }
+    }
+
+    .dashboard-header-body-footer {
+        width: calc(100% - 300px);
+    }
+
+    .mobile-menu-overlay {
+        display: none;
+    }
+
+    .menu__account-select {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 100%;
+        background-color: $body-bg;
+
+        ::v-deep {
+            .vs__selected {
+                width: 97%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .vs__selected-options {
+                width: 50%;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+            .vs__dropdown-toggle {
+                height: 100%;
+                padding-top: 5px;
+                padding-bottom: 9px;
+                align-items: center;
+                border: 1px solid #C7C7C7;
+            }
+            .vs__dropdown-menu {
+                padding-top: 0px;
+            }
+            .vs__dropdown-option {
+                border-top: 1px solid lightgray;
+            }
+            .vs__dropdown-option--highlight * {
+                color: white !important;
+            }
+        }
+
+        .account-select__select-option {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            @media #{$breakpointTabletLandscapeMin} {
+                padding-right: 45px;
+            }
+        }
+
+        .select-option__account-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            font-size: 16px;
+            color: #0b102a;
+        }
+
+        .select-option__account-balance {
+            font-size: 16px;
+        }
+
+        .dropdown-option {
+            min-height: 40px;
+        }
+    }
+    
+    @media only screen and (max-height: $desktopSideBarHeightMin) {
+        .dashboard-header-body-footer {
+            > .row {
+                min-height: $desktopSideBarHeightMin !important;
+            }
+        }
+    }
+}
+
+
+@media #{$breakpointTabletLandscapeMax} {
+
+    .dashboardLayoutComponent > .col-lg-3 {
+        margin-bottom: 1.5rem;
+    }
+    .sidebar-menu {
+        position: fixed;
+        right: -292px;
+        width: 290px;
+        top: calc(#{env(safe-area-inset-top, 0px)} + #{$header-height});
+        height: calc(100vh - #{$header-height} - #{env(safe-area-inset-top, 0px)});
+        background-color: $white;
+        overflow: auto;
+        transition: all 0.3s;
+    }
+    .sidebar-menu--active {
+        right: 0;
+    }
+    .mobile-menu-overlay {
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        z-index: 200;
+    }
+
+    .transition-mobile-menu-overlay-enter-active,
+    .transition-mobile-menu-overlay-leave-active {
+        transition: all 0.3s ease-in-out;
+        opacity: 0.5;
+    }
+    .transition-mobile-menu-overlay-enter,
+    .transition-mobile-menu-overlay-leave-to
+    {
+        opacity: 0;
+    }
+}
+
+
+.sidebar-menu:focus {
+    outline: none;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-top: env(safe-area-inset-top, 0px) !important;
+}
+
+.refresh-button {
+    display: inline-block;
+    margin-right: 8px;
+    &.refresh-button--ios {
+        margin-right: 21px;
+    }
+}
+
+.menuLinkBadge {
+    font-weight: normal;
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    right: -25px;
+    background-color: $danger;
+    color: $white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    $supportedLengths: 3, 4, 5;
+    @each $length in $supportedLengths {
+        &.menuLinkBadge--length-#{$length} {
+            right: calc(-25px - (#{5px * $length}));
+            width: calc(20px + (#{5px * $length}));
+        }
+    }
+
+    &.menuLinkBadge--mobile {
+        top: -5px;
+        right: -5px;
+    }
+}
+
+.ios-footer {
+    position: relative;
+    width: 100%;
+    height: calc(75px + env(safe-area-inset-bottom, 15px));
+}
+.ios-footer__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 75px;
+    background-color: $white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid $gray-200;
+    &.ios-footer__menu--keyboard-active {
+        bottom: -75px;
+    }
+    .ios-footer__link {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        font-size: 10px;
+        color: $gray-400;
+
+        .menuLinkBadge {
+            right: -5px;
+            top: -0.75em;
+        }
+    }
+    .ios-footer__link-icon {
+        font-size: 22px;
+        &.fa-bars {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.nav-item,
+.ios-footer__link {
+    position: relative;
+    cursor: pointer;
+    color: #0B102A;
+    text-decoration: none;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    i {
+        font-size: 18px;
+        &:before {
+            margin-left: .2em;
+            margin-right: .2em;
+        }
+
+        &.fa-lock {
+            margin-right: 3px;
+        }
+    }
+    &:hover {
+        color: $link-hover-color;
+    }
+    &.router-link-active {
+        color: #2E13C4;
+
+        .icon-dym-dashboard {
+            &::before {
+                content: url('/fonts/dashboard-color-icon.svg');
+                top: 3px;
+                position: relative;
+            }
+        }
+    }
+}
+
+.dashboard-header-body-footer {
+    > .row {
+        min-height: 100vh;
+    }
+}
+
+.dashboard-header-content {
+    background-color: $body-bg;
+    color: white;
+    padding: 25px;
+    margin-bottom: 5px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.dashboard-footer-content {
+    font-size: 14px;
+    border-top: 1px solid $gray-200;
+    padding: 15px;
+    margin-top: auto;
+}
+
+.header-date {
+    color: $link-hover-color;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.dashboard-sidebar-padding {
+    padding: 15px;
+}
+::v-deep {
+    .fa-calculator {
+        color: $gray-400;
+    }
+    .fadeHeight-enter-active,
+    .fadeHeight-leave-active {
+        transition: all 0.5s ease-in-out;
+        max-height: 2300px;
+        overflow: hidden;
+    }
+    .fadeHeight-enter,
+    .fadeHeight-leave-to
+    {
+        opacity: 0;
+        max-height: 0px;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,110 @@
+// Buttons
+
+// Bootstrap mixins used here
+// /** @include button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%))
+//   * @include button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color)
+//   */
+
+.btn-primary {
+    @include button-variant($primary, $primary, $primary-hover, $primary-hover, $primary-pressed, $primary-pressed);
+
+    color: white;
+
+    &:hover,
+    &:focus {
+        color: white;
+    }
+}
+
+.btn-secondary {
+    @include button-variant($secondary, $secondary, $secondary-hover, $secondary-hover, $secondary-pressed, $secondary-pressed);
+
+    color: white;
+
+    &:hover,
+    &:focus {
+        color: white;
+    }
+}
+
+.btn-outline-plain {
+    @include button-outline-variant($body-color, $gray-100);
+
+    &:active, &:active:focus {
+        color: $gray-100;
+    }
+}
+
+.btn-plain {
+    @include button-variant(transparent, transparent, $gray-200, $gray-200, $gray-300, $gray-300);
+
+    color: $body-color;
+
+    &:hover, &:disabled {
+        color: $body-color;
+    }
+}
+
+// Icon spacing
+.btn span {
+    &:first-child {
+        padding-right: 2.5px;
+    }
+
+    &:last-child {
+        padding-left: 2.5px;
+    }
+}
+
+.btn i[class^=icon-dym] {
+    // dym icons have a larger spacing grid than font-awesome
+    font-size: 80%;
+}
+
+.btn-md {
+    @include button-size($padding-medium-vertical, $padding-medium-horizontal, $font-size-medium, $line-height-medium, $btn-border-radius-medium);
+}
+
+// Muted buttons
+.btn-muted {
+    &.btn-success,
+    &-success {
+        background-color: $button-success-muted-bg;
+        color: $button-success-muted-color !important;
+
+        &:hover {
+            background-color: darken($button-success-muted-bg, 5%);
+        }
+    }
+
+    &.btn-danger,
+    &-danger {
+        background-color: $button-danger-muted-bg;
+        color: $button-danger-muted-color !important;
+
+        &:hover {
+            background-color: darken($button-danger-muted-bg, 5%);
+        }
+    }
+}
+
+
+.btn {
+    border-radius: 6px;
+    line-height: 1.5em;
+}
+
+.btn-link:focus {
+    box-shadow: none;
+}
+
+.btn-white {
+    background-color: transparent;
+    border-color: transparent;
+    color: theme-color('gray-a');
+    &:hover {
+        color: theme-color('gray-a');
+        background-color: transparent;
+        border-color: transparent;
+    }
+}

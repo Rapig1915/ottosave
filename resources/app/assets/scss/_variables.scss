@@ -1,0 +1,152 @@
+// Boostrap defaults
+@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/_variables";
+
+$grid-gutter-width: 40px;
+// Container
+$container-large-desktop: calc(1300px + #{$grid-gutter-width});
+$container-lg: $container-large-desktop;
+
+
+// Color
+$primary: #3E32C4;
+$secondary: #00D19D;
+$info-box-bg: #EBF5FD;
+$black: #0B102A;
+
+$body-color: $black;
+$text-color: $body-color;
+$body-color-dark: $black;
+$body-bg: #f7f7f7;
+
+$header-height: 80px;
+
+// /*
+//    $theme-colors map is how to override Bootstrap colors per:
+//    https://getbootstrap.com/docs/4.0/getting-started/theming/#theme-colors
+// */
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "gray-3": #333333,
+    "gray-d": #D6D5D5,
+    "gray-e": #EBEBEB,
+    "gray-a": #ABABAB,
+    "gray-f": #f7f7f7,
+    "white": #FFF,
+    "purple": #2E13C4
+);
+
+// Color Variants
+$primary-hover: #4E42D4;
+$secondary-hover: #11e2ae;
+$primary-pressed: #2E22B4;
+$secondary-pressed: #03ac82;
+
+$secondary-light: lighten($secondary, 60%);
+$secondary-medium: lighten($secondary, 40%);
+
+$link-color: #2E13C4;
+$link-hover-color: #ABABAB;
+
+$card-footer-background-color: #FFFFFF;
+$off-white-background: #FAFBFC;
+
+$account-colors: (
+    // color definitions no longer match color names
+    "gray": #D6D5D5,
+    "gray-alt": #0B102A,
+    "cyan": #FFB617,
+    "cyan-alt": #CE931F,
+    "green": #00D19D,
+    "green-alt": #31AE80,
+    "purple": #1778FF,
+    "purple-alt": #1251D0,
+    "pink": #133CF2,
+    "pink-alt": #0015C3,
+    "orange": #FF346C,
+    "orange-alt": #C42348,
+    "yellow": #09EAF2,
+    "yellow-alt": #46C1CA,
+    "violet": #8A179E,
+    "violet-alt": #590072,
+    "light-gray": #b2bac3,
+    "light-orange": #ffc181,
+    "teal": #54cad4,
+    "sky": #00d0d6,
+    "sky-alt": #A7DCE2,
+    "lavender": #CCB7E9,
+    "peach": #F7CFA5,
+    "dark-peach": #FFBBA8,
+    "periwinkle": #A6ADDB,
+    "gold": #D4AF37,
+    "silver": #C0C0C0,
+    "bronze": #CD7F32,
+    "primary": $primary,
+    "custom-1": #2B14BC
+ );
+
+// Grays
+$gray-050: #fafbfc;
+$gray-100: #f9fafb;
+$gray-200: #EBEBEB;
+$gray-300: #D6D5D5;
+$gray-400: #ABABAB;
+$gray-500: #748185;
+$gray-600: #6B6B6B;
+$gray-700: #202a35;
+
+// Buttons
+// # Custom Size
+$padding-medium-vertical: 0.6rem;
+$padding-medium-horizontal: 0.9rem;
+$font-size-medium: 1rem;
+$line-height-medium: 1.5;
+$btn-border-radius-medium: 0.2rem;
+
+// # Colors
+$button-success-muted-bg: #e5f9f4;
+$button-success-muted-color: #37c9a0;
+$button-danger-muted-bg: #fbedee;
+$button-danger-muted-color: #ebaab0;
+
+// Forms
+
+// Typography
+$font-family-sans-serif: Gibson, sans-serif;
+$local-font: true;
+$font-family-name: Gibson;
+$font-file-path: /fonts/vendor/gibson;
+$font-file-names: (regular: Gibson-Regular, light: Gibson-Light, semibold: Gibson-SemiBold, bold: Gibson-Bold);
+
+$font-weights: (regular: 400, light: 300, semibold: 600, bold: 700);
+
+// Effects
+$default-focus-shadow:  0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+$default-focus-border-color:  #80bdff;
+// /*
+//  breakpoint variables
+//  usage: @media #{insert_breakpoint_variable} {}
+// */
+
+$widthPhone: 320px;
+$widthPhoneLandscape: 480px;
+$widthPhoneAlternative: 576px;
+$widthTablet: 768px;
+$widthTabletLandscape: 992px;
+$widthDesktop: 1200px;
+$widthDesktopWide: 1400px;
+$breakpointPhoneMax: "only screen and (max-width : #{$widthPhone})";
+$breakpointPhoneLandscapeMax: "only screen and (max-width: #{$widthPhoneLandscape})";
+$breakpointPhoneAlternative: "only screen and (max-width: #{$widthPhoneAlternative})";
+$breakpointTabletMax: "only screen and (max-width : #{$widthTablet})";
+$breakpointTabletLandscapeMax: "only screen and (max-width : #{$widthTabletLandscape})";
+$breakpointDesktopMax: "only screen and (max-width : #{$widthDesktop})";
+$breakpointDesktopWideMax: "only screen and (max-width : #{$widthDesktopWide})";
+$breakpointPhoneMin: "only screen and (min-width : #{$widthPhone})";
+$breakpointPhoneLandscapeMin: "only screen and (min-width : #{$widthPhoneLandscape})";
+$breakpointTabletMin: "only screen and (min-width : #{$widthTablet})";
+$breakpointTabletLandscapeMin: "only screen and (min-width : #{$widthTabletLandscape})";
+$breakpointDesktopMin: "only screen and (min-width : #{$widthDesktop})";
+$breakpointDesktopWideMin: "only screen and (min-width : #{$widthDesktopWide})";
+$desktopSideBarHeightMin: 740px;

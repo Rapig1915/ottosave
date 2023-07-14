@@ -1,0 +1,5 @@
+*
+!.gitignore
+!documents/*
+!fonts/vendor/gibson
+!fonts/vendor/gibson/*

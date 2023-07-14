@@ -1,0 +1,7 @@
+#This file is used by Habitus on Cloud66 to build the images for the services. See the service.yml
+build:
+  version: 2016-03-14 # version of the build schema.
+  steps:
+    redis-service:
+      name: dym-redis-image
+      dockerfile: ./docker/redis/Dockerfile

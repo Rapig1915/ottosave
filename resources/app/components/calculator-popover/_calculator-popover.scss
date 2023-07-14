@@ -1,0 +1,20 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.calculatorPopoverComponent {
+    ::v-deep {
+        .popover {
+            white-space: nowrap;
+
+            .arrow {
+                display: none;
+            }
+        }
+        .total {
+            font-weight: 600;
+        }
+
+        .bank-account-icon::before {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

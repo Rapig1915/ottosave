@@ -1,0 +1,36 @@
+// Footer
+
+.card {
+    border-color: transparent;
+    border-radius: 6px;
+    box-shadow: 3px 7px 6.5px rgba(214, 213, 213, 0.48);
+}
+
+.card-header {
+    background-color: $white;
+    border-bottom: 1px solid $gray-300;
+}
+
+.card-footer {
+    background-color: $card-footer-background-color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+p.card-title {
+    margin-bottom: 0;
+}
+
+.otto-card-body-px {
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+
+    @media #{$breakpointTabletMax} {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+    @media #{$breakpointPhoneAlternative} {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

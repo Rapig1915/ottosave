@@ -1,0 +1,11 @@
+//# Checkbox customization
+
+//#== Color Variants
+
+@each $colorname, $color in $theme-colors {
+    .#{$colorname}.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+    .custom-checkbox .#{$colorname}.custom-control-input:checked ~ .custom-control-label::before,
+    .#{$colorname}.custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $color;
+    }
+}

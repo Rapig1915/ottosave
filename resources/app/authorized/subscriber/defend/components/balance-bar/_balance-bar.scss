@@ -1,0 +1,43 @@
+@import "~vue_root/assets/scss/_variables.scss";
+
+.balanceBarComponent {
+    .account-info {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+    .account-info__accountName {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 18px;
+    }
+    .account-info__balanceText {
+        font-size: 18px;
+        color: $gray-300;
+        transition: all 0.3s;
+        &--synced {
+            color: $black;
+        }
+        cursor: pointer;
+    }
+    .balance-bar {
+        position: relative;
+        background-color: $gray-200;
+        height: 12px;
+        border-radius: 3px;
+
+        &__colored {
+            position: absolute;
+            height: 12px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            &--dark-balance {
+                z-index: 2;
+            }
+            &--light-balance {
+                opacity: 0.5;
+            }
+        }
+    }
+}

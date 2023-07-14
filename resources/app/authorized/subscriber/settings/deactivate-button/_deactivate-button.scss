@@ -1,0 +1,22 @@
+@import "~vue_root/assets/scss/_variables.scss";
+.deactivateButtonComponent {
+    .btn {
+        height: 3em;
+    }
+
+    .fadeHeight-enter-active,
+    .fadeHeight-leave-active {
+        transition-duration: 0.5s;
+        transition-property: all;
+        transition-timing-function: ease-in-out;
+        max-height: 2300px;
+        overflow: hidden;
+    }
+    .fadeHeight-enter,
+    .fadeHeight-leave-to
+    {
+        opacity: 0;
+        max-height: 0px;
+        overflow: hidden;
+    }
+}
